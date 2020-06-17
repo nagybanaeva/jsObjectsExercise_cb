@@ -27,3 +27,6 @@ document.write(myBook['borrowed by']);
 
 myBook['borrowed by'] = 'Kata';
 document.write(myBook['borrowed by']);
+
+myBook.rating = 5;
+document.write(myBook.rating);
