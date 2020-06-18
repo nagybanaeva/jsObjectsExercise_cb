@@ -30,3 +30,9 @@ document.write(myBook['borrowed by']);
 
 myBook.rating = 5;
 document.write(myBook.rating);
+
+document.write('author' in myBook);
+
+document.write('rating' in myBook);
+
+document.write(myBook.hasOwnProperty('rating'));
