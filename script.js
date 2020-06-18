@@ -39,3 +39,6 @@ document.write('author' in myBook);
 document.write('rating' in myBook);
 
 document.write(myBook.hasOwnProperty('rating'));
+
+
+myBook['page marker']();
