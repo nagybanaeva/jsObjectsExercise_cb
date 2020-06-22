@@ -1,4 +1,4 @@
-var myBook = {
+var myBook1 = {
 	'title': 'To Kill a Mockingbird',
   	'author': 'Harper Lee',
   	'genre': 'coming-of-age story',
@@ -11,46 +11,113 @@ var myBook = {
     	'p309': '"An\' they chased him \'n\' never could catch him \'cause they didn\'t know what he looked like, an\' Atticus, when they finally saw him, why he hadn\'t done any of those things... Atticus, he was real nice..." His hands were under my chin, pulling up the cover, tucking it around me. "Most people are, Scout, when you finally see them."'
   	},
 	'borrowed by':'undifined',
+	'rating': 5,
 	'page marker': function () {
-		var pageInitial = myBook.page;
-  		myBook.page = prompt('Melyik oldalon tartasz?');
+		var pageInitial = this.page;
+  		this.page = prompt('Melyik oldalon tartasz a ' + this.title + ' című könyvedben?');
 		if(typeof pageInitial === 'undefined') {
-    		alert('Jelenleg az alábbi oldalon tartasz: ' + myBook.page + ' az alábbi könyvedben: ' + myBook.title + '.');
+    		alert('Jelenleg az alábbi oldalon tartasz: ' + this.page + ' az alábbi könyvedben: ' + this.title + '.');
   		} 
-		else if (pageInitial > myBook.page) { 
-			alert('Szerintem elírtad a aktuális oldalszámot, mert ' + myBook.page + ' kevesebb, mint az előzőleg elolvasott oldalszám, azaz az ' + pageInitial + '.');
+		else if (pageInitial > this.page) { 
+			alert('Szerintem elírtad a aktuális oldalszámot' + ' az alábbi könyvedben: ' + this.title + ', mert a ' + this.page + ' kevesebb, mint az előzőleg elolvasott oldalszám, azaz az ' + pageInitial + '.');
 		}
 		else {
-    		alert('Jelenleg az alábbi oldalon tartasz: ' + myBook.page + ' az alábbi könyvedben: ' + myBook.title + '. Legutóbb az alábbi oldalon tartottál: ' + pageInitial + ', így ez alkalommal ' + (myBook.page - pageInitial) + ' oldalt olvastál.');
+    		alert('Jelenleg az alábbi oldalon tartasz: ' + this.page + ' az alábbi könyvedben: ' + this.title + '. Legutóbb az alábbi oldalon tartottál: ' + pageInitial + ', így ez alkalommal ' + (this.page - pageInitial) + ' oldalt olvastál.');
   		}
 	}
 };
 
-console.log(myBook);
+console.log(myBook1);
 
-console.log(myBook.author);
+console.log(myBook1.author);
 
-console.log(myBook.genre);
+console.log(myBook1.genre);
 
-console.log(myBook['main characters']);
+console.log(myBook1['main characters']);
 
-console.log(myBook.quotes.p116);
+console.log(myBook1.quotes.p116);
 
-console.log(myBook['borrowed by']);
+console.log(myBook1['borrowed by']);
 
-myBook['borrowed by'] = 'Kata';
-console.log(myBook['borrowed by']);
+myBook1['borrowed by'] = 'Kata';
+console.log(myBook1['borrowed by']);
 
-myBook.rating = 5;
-console.log(myBook.rating);
+console.log(myBook1.rating);
 
-console.log('author' in myBook);
+console.log('author' in myBook1);
 
-console.log('rating' in myBook);
+console.log('rating' in myBook1);
 
-console.log(myBook.hasOwnProperty('rating'));
+console.log(myBook1.hasOwnProperty('rating'));
 
 
-myBook['page marker']();
-myBook['page marker']();
+var nemSzam = NaN;
+console.log(typeof nemSzam);
+console.log(typeof NaN);
+
+
+var myBook2 = {
+	'title': 'The Red and the Black',
+  	'author': 'Stendhal',
+  	'genre': 'historical psychological novel',
+  	'year of publication': 1830,
+	'has been read': true,
+  	'main characters': ['Julien Sorel', 'Madame de Renal', 'Mathilde de la Mole'],
+  	'quotes': {
+    	'p1': '"The little town of Verrières might be one of the prettiest in all Franche-Comté." "This operation, visibly harsh and violent, is one of the things that most astonishes a first-time traveler, poking his way into the mountains separating France and Switzerland. "',
+    	'p6': 'Monsieur Appert understood that he was dealing with a high-minded man: he followed the venerable priest, went to the prison, the old people\’s home, the poorhouse, asked a great many questions and, in spite of some extraordinary responses, did not allow himself the slightest indication of criticism.',
+    	'p10': '"Well, lazybones! You\’re always reading your damned books—and you’re supposed to be in charge of the saw? Read them tonight, when you\’re wasting time with the parish priest— fine, fine!" "He was a small young man, eighteen or nineteen years old, not appearing very strong, with irregular but delicate features and an aquiline nose."'
+  	},
+	'borrowed by':'undifined',
+	'rating': 5,
+	'page marker': function () {
+		var pageInitial = this.page;
+  		this.page = prompt('Melyik oldalon tartasz a ' + this.title + ' című könyvedben?');
+		if(typeof pageInitial === 'undefined') {
+    		alert('Jelenleg az alábbi oldalon tartasz: ' + this.page + ' az alábbi könyvedben: ' + this.title + '.');
+  		} 
+		else if (pageInitial > this.page) { 
+			alert('Szerintem elírtad a aktuális oldalszámot, mert ' + this.page + ' kevesebb, mint az előzőleg elolvasott oldalszám, azaz az ' + pageInitial + '.');
+		}
+		else {
+    		alert('Jelenleg az alábbi oldalon tartasz: ' + this.page + ' az alábbi könyvedben: ' + this.title + '. Legutóbb az alábbi oldalon tartottál: ' + pageInitial + ', így ez alkalommal ' + (this.page - pageInitial) + ' oldalt olvastál.');
+  		}
+	}
+};
+
+var myBook3 = {
+	'title': 'The Hearthless Man\'s Sons',
+  	'author': 'Mór Jókai',
+  	'genre': 'historical novel',
+  	'year of publication': 1869,
+	'has been read': true,
+  	'main characters': ['Julien Sorel', 'Madame de Renal', 'Mathilde de la Mole'],
+  	'quotes': {
+    	'p5': 'The baroness did her husband\'s bidding, seating herself at the little table and writing down what had just been told her. ',
+    	'p20': 'The old priest, however, lingered behind and, while all the rest turned their faces toward the castle, took his daughter by the hand and went another way. In vain had a cover been laid for him in the great hall of the castle.',
+    	'p35': 'But Ödön arose without a word and left the box. Leonin followed him.'
+  	},
+	'borrowed by':'undifined',
+	'rating': 5,
+	'page marker': function () {
+		var pageInitial = this.page;
+  		this.page = prompt('Melyik oldalon tartasz a ' + this.title + ' című könyvedben?');
+		if(typeof pageInitial === 'undefined') {
+    		alert('Jelenleg az alábbi oldalon tartasz: ' + this.page + ' az alábbi könyvedben: ' + this.title + '.');
+  		} 
+		else if (pageInitial > this.page) { 
+			alert('Szerintem elírtad a aktuális oldalszámot, mert ' + this.page + ' kevesebb, mint az előzőleg elolvasott oldalszám, azaz az ' + pageInitial + '.');
+		}
+		else {
+    		alert('Jelenleg az alábbi oldalon tartasz: ' + this.page + ' az alábbi könyvedben: ' + this.title + '. Legutóbb az alábbi oldalon tartottál: ' + pageInitial + ', így ez alkalommal ' + (this.page - pageInitial) + ' oldalt olvastál.');
+  		}
+	}
+};
+
+myBook1['page marker']();
+myBook1['page marker']();
+myBook2['page marker']();
+myBook2['page marker']();
+myBook3['page marker']();
+myBook3['page marker']();
 
